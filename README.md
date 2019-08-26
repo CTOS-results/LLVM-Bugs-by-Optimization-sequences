@@ -11,6 +11,9 @@
 
 
 ## Reported Bugs
+
+reported_bugs.xlsx is the full list of the reported bugs, including bug ID, optimization sequences for each bug, bug type, bug status.
+
 ### Crash: 57
 - https://bugs.llvm.org/show_bug.cgi?id=40423      
 - https://bugs.llvm.org/show_bug.cgi?id=40422      
