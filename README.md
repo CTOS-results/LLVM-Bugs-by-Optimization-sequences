@@ -1,8 +1,6 @@
 # CTOS: Compiler Testing for Optimization Sequences
 
-CTOS is a novel compiler testing method based on differential testing for detecting compiler bugs caused by optimization sequences. 
-
-This repository contains the testing results of CTOS over seven months and the results of comparison experiments for our paper .
+CTOS is a novel compiler testing method based on differential testing for detecting compiler bugs caused by optimization sequences. This repository contains the testing results of CTOS over seven months and the results of comparison experiments for our paper .
 
 Currently, the most of work is conducted on LLVM, which is a mature and widely used compiler infrastructure. Hundreds of analysis and transformation optimizations have been implemented in LLVM. For more information about LLVM, please referring the website of LLVM, http://llvm.org/.
 
@@ -18,7 +16,8 @@ Currently, the most of work is conducted on LLVM, which is a mature and widely u
 
 ## Reported Bugs
 
-reported_bugs.xlsx is the full list of the reported bugs, including bug ID, optimization sequences for each bug, bug type, bug status.
+**reported_bugs.xlsx** is the full list of the reported bugs, including bug ID, optimization sequences for each bug, bug type, bug status. In 7 months, we have reported 5 types and 104 valid bugs, of which 21 have been confirmed and fixed. 47 unique
+optimization are identified to be faulty and 15 of them are loop related optimizations. The detail information of each bug can be found on the bug repository of LLVM using the following URLs.
 
 ### Crash: 57
 - https://bugs.llvm.org/show_bug.cgi?id=40423      
@@ -131,8 +130,19 @@ reported_bugs.xlsx is the full list of the reported bugs, including bug ID, opti
 - https://bugs.llvm.org/show_bug.cgi?id=41320
 - https://bugs.llvm.org/show_bug.cgi?id=41290
 
-### Bug of Code Gen.
+### Bug of Code Generator: 1
 - https://bugs.llvm.org/show_bug.cgi?id=42452
 
 ## Comparison experiments
-**comparsion_results.xlsx** contains the results of comparison experiments in Section 4.4. The testing programs, optimization sequences, and the original testing results are contained in the '**comparison_experiments**' directory.
+**comparsion_results.xlsx** contains the results of comparison experiments in Section 4.4. The testing programs, optimization sequences, and the original testing results are contained in the '**comparison_experiments**' directory. **xx.tar.xz** includes the tested programs in the experiment. For each tested program, the bug information of compiler is attached to the end of the file.
+
+##Time for bugs related to scalar optimizations
+We collect 1323 unique bugs related to scalar optimizations from the bug repository of LLVM from October 2003 to Jun 10, 2019 to demonstrate that  it is time-consumming for confirming or fixing the bugs of optimizations. '**collected_bugs.txt**' contains the original bug information. In these bugs, 828 bugs have been confirmed or fixed, and 495 bugs still keep the "NEW" status. For the 828 confirmed or fixed bugs, although 428 bugs are confirmed or fixed in one month, the developers take more than 15 months to confirm or fix the most residual bugs. The average number of months for confirming or fixing these bugs is 5.6. In addition, the 495 bugs with "NEW" status have already existed for a long time, an average of 14.1 months.
+
+<img src="Figure_1.png" style="zoom:70%" />
+
+Fig. 1 Number of months for confirming or fixing a bug.
+
+<img src="Figure_2.png" style="zoom:70%" />
+
+Fig. 2 Number of months for the bug with "NEW" status.
