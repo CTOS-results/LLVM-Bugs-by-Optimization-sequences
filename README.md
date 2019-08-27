@@ -12,8 +12,6 @@ Currently, the most of work is conducted on LLVM, which is a mature and widely u
 | **OPTIMIZATION**                                             | **OPTIMIZATION**                                             |
 | -separate-const-offset-from-gep<br/>-simple-loop-unswitch<br/>-simplifycfg<br/>-sink<br/>-slp-vectorizer<br/>-slsr<br/>-speculative-execution | -sroa<br/>-strip<br/>-strip-dead-prototypes<br/>-structurizecfg<br/>-tailcallelim<br/>-transform-warning<br/>-verify |
 
-
-
 ## Reported Bugs
 
 **reported_bugs.xlsx** is the full list of the reported bugs, including bug ID, optimization sequences for each bug, bug type, bug status. In 7 months, we have reported 5 types and 104 valid bugs, of which 21 have been confirmed and fixed. 47 unique
@@ -135,6 +133,7 @@ optimization are identified to be faulty and 15 of them are loop related optimiz
 
 ## Comparison experiments
 **comparsion_results.xlsx** contains the results of comparison experiments in Section 4.4. The testing programs, optimization sequences, and the original testing results are contained in the '**comparison_experiments**' directory. **xx.tar.xz** includes the tested programs in the experiment. For each tested program, the bug information of compiler is attached to the end of the file.
+<<<<<<< HEAD
 
 ##Time for bugs related to scalar optimizations
 We collect 1323 unique bugs related to scalar optimizations from the bug repository of LLVM from October 2003 to Jun 10, 2019 to demonstrate that  it is time-consumming for confirming or fixing the bugs of optimizations. '**collected_bugs.txt**' contains the original bug information. In these bugs, 828 bugs have been confirmed or fixed, and 495 bugs still keep the "NEW" status. For the 828 confirmed or fixed bugs, although 428 bugs are confirmed or fixed in one month, the developers take more than 15 months to confirm or fix the most residual bugs. The average number of months for confirming or fixing these bugs is 5.6. In addition, the 495 bugs with "NEW" status have already existed for a long time, an average of 14.1 months.
