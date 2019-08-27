@@ -1,8 +1,6 @@
 # CTOS: Compiler Testing for Optimization Sequences
 
-CTOS is a novel compiler testing method based on differential testing for detecting compiler bugs caused by optimization sequences. 
-
-This repository contains the testing results of CTOS over seven months and the results of comparison experiments for our paper .
+CTOS is a novel compiler testing method based on differential testing for detecting compiler bugs caused by optimization sequences. This repository contains the testing results of CTOS over seven months and the results of comparison experiments for our paper .
 
 Currently, the most of work is conducted on LLVM, which is a mature and widely used compiler infrastructure. Hundreds of analysis and transformation optimizations have been implemented in LLVM. For more information about LLVM, please referring the website of LLVM, http://llvm.org/.
 
@@ -18,7 +16,7 @@ Currently, the most of work is conducted on LLVM, which is a mature and widely u
 
 ## Reported Bugs
 
-reported_bugs.xlsx is the full list of the reported bugs, including bug ID, optimization sequences for each bug, bug type, bug status.
+**reported_bugs.xlsx** is the full list of the reported bugs, including bug ID, optimization sequences for each bug, bug type, bug status.
 
 ### Crash: 57
 - https://bugs.llvm.org/show_bug.cgi?id=40423      
