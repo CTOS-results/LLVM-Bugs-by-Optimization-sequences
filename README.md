@@ -130,7 +130,7 @@ optimization are identified to be faulty and 15 of them are loop related optimiz
 - https://bugs.llvm.org/show_bug.cgi?id=41320
 - https://bugs.llvm.org/show_bug.cgi?id=41290
 
-### Bug of Code Gen.
+### Bug of Code Gen.: 1
 - https://bugs.llvm.org/show_bug.cgi?id=42452
 
 ## Comparison experiments
