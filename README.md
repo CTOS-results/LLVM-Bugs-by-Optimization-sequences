@@ -16,7 +16,8 @@ Currently, the most of work is conducted on LLVM, which is a mature and widely u
 
 ## Reported Bugs
 
-**reported_bugs.xlsx** is the full list of the reported bugs, including bug ID, optimization sequences for each bug, bug type, bug status.
+**reported_bugs.xlsx** is the full list of the reported bugs, including bug ID, optimization sequences for each bug, bug type, bug status. In 7 months, we have reported 5 types and 104 valid bugs, of which 21 have been confirmed and fixed. 47 unique
+optimization are identified to be faulty and 15 of them are loop related optimizations. The detail information of each bug can be found on the bug repository of LLVM using the following URLs.
 
 ### Crash: 57
 - https://bugs.llvm.org/show_bug.cgi?id=40423      
@@ -133,4 +134,4 @@ Currently, the most of work is conducted on LLVM, which is a mature and widely u
 - https://bugs.llvm.org/show_bug.cgi?id=42452
 
 ## Comparison experiments
-**comparsion_results.xlsx** contains the results of comparison experiments in Section 4.4. The testing programs, optimization sequences, and the original testing results are contained in the '**comparison_experiments**' directory.
+**comparsion_results.xlsx** contains the results of comparison experiments in Section 4.4. The testing programs, optimization sequences, and the original testing results are contained in the '**comparison_experiments**' directory. **xx.tar.xz** includes the tested programs in the experiment. For each tested program, the bug information of compiler is attached to the end of the file.
