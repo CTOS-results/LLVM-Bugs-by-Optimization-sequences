@@ -19,6 +19,8 @@ In our study, C programs are used as the inputs for LLVM in our experiments, thu
 **reported_bugs.xlsx** is the full list of the reported bugs, including bug ID, optimization sequences for each bug, bug type, bug status. In 7 months, we have reported 5 types and 104 valid bugs, of which 21 have been confirmed and fixed. 47 unique
 optimization are identified to be faulty and 15 of them are loop related optimizations. The detail information of each bug can be found on the bug repository of LLVM using the following URLs.
 
+**The full list of the reported bugs can be found** [here](https://bugs.llvm.org/buglist.cgi?email1=cszide%40163.com&emailreporter1=1&emailtype1=substring&list_id=171395&query_format=advanced&resolution=---&resolution=FIXED&resolution=INVALID&resolution=WONTFIX&resolution=LATER&resolution=REMIND&resolution=DUPLICATE&resolution=WORKSFORME&resolution=MOVED).
+
 ### Crash: 57
 - https://bugs.llvm.org/show_bug.cgi?id=40423      
 - https://bugs.llvm.org/show_bug.cgi?id=40422      
