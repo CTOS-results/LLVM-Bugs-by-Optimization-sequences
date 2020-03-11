@@ -1,8 +1,17 @@
-# CTOS: Compiler Testing for Optimization Sequences
+# CTOS: Compiler Testing for Optimization Sequences of LLVM
 
-CTOS is a novel compiler testing method based on differential testing for detecting compiler bugs caused by optimization sequences. This repository contains the testing results of CTOS over seven months and the results of comparison experiments for our paper .
+CTOS is a novel compiler testing method based on differential testing for detecting LLVM bugs caused by optimization sequences. LLVM is a mature and widely used compiler infrastructure. Hundreds of analysis and transformation optimizations have been implemented in LLVM. For more information about LLVM, please referring the website of LLVM, http://llvm.org/.
 
-Currently, the most of work is conducted on LLVM, which is a mature and widely used compiler infrastructure. Hundreds of analysis and transformation optimizations have been implemented in LLVM. For more information about LLVM, please referring the website of LLVM, http://llvm.org/.
+ The following figure shows the framework of CTOS.
+
+<img src="framework.png" style="zoom:70%" />
+
+
+
+CTOS is composed of 5 steps. (1) The first step is to select representative optimization sequences and testing programs for finding as many unique bugs as possible in reasonable time. (2) Then, the front-end of a compiler is used to emit the IR file of a given testing program without optimizations. (3) The third step is to optimize the IR produced in the previous step using the optimizer $Opt$ of LLVM with the selected optimization sequences. For the IR of a testing program, if there are $n$ selected optimization sequences, $n$ optimized IRs (i.e., $IR_{opt1}$, $IR_{opt2}$, $\cdots$, $IR_{optn}$) will be produced by the optimizer $Opt$. (4) In the fourth step, the $n$ optimized IRs are loaded by the back-end of a compiler to generate $n$ executables (i.e., $exe_1$, $exe_2$, $\cdots$, $exe_n$). (5) The final step is to obtain the outputs (i.e., $O_1$, $O_2$, $\cdots$, $O_n$) of $n$ executables and compare them to determine whether there are bugs. The outputs may be different, but the majority of them should be identical. Thus, if there is an output $O_i$ that is different from the majority of \{$O_1$, $O_2$, $\cdots$, $O_n$\}, $1\leq i \leq n$, then the $i$th optimization sequence is deemed to trigger a compiler bug for the given testing program.
+
+Within seven month evaluations on LLVM, we have reported 104 valid bugs within 5 types, of which 21 have been confirmed or fixed. Most of those bugs are crash bugs (57) and wrong code bugs (24). 47 unique optimizations are identified
+to be faulty and 15 of them are loop related optimizations.  
 
 ## Tested Optimization
 
@@ -136,7 +145,7 @@ optimization are identified to be faulty and 15 of them are loop related optimiz
 - https://bugs.llvm.org/show_bug.cgi?id=42452 (fixed)
 
 ## Time for confirming or fixing bugs of optimizations
-We collect 1323 unique bugs related to scalar optimizations from the bug repository of LLVM from October 2003 to Jun 10, 2019 to demonstrate that  it is time-consumming for confirming or fixing the bugs of optimizations. '**collected_bugs.txt**' contains the original bug information. In these bugs, 828 bugs have been confirmed or fixed, and 495 bugs still keep the "NEW" status. For the 828 confirmed or fixed bugs, although 428 bugs are confirmed or fixed in one month, the developers take more than 15 months to confirm or fix the most residual bugs. The average number of months for confirming or fixing these bugs is 5.6. In addition, the 495 bugs with "NEW" status have already existed for a long time, an average of 14.1 months.
+We collect 1323 unique bugs related to scalar optimizations from the bug repository of LLVM from October 2003 to Jun, 2019 to demonstrate that  it is time-consumming for confirming or fixing the bugs of optimizations. '**collected_bugs.txt**' contains the original bug information. In these bugs, 828 bugs have been confirmed or fixed, and 495 bugs still keep the "NEW" status. For the 828 confirmed or fixed bugs, although 428 bugs are confirmed or fixed in one month, developers take more than 15 months to confirm or fix the most residual bugs. The average number of months for confirming or fixing these bugs is 5.6. In addition, 495 bugs with "NEW" status have already existed for a long time, an average of 14.1 months.
 
 <img src="Figure_1.png" style="zoom:70%" />
 
