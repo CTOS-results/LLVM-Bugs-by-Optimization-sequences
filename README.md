@@ -135,9 +135,6 @@ optimization are identified to be faulty and 15 of them are loop related optimiz
 ### Bug of Code Generator: 1
 - https://bugs.llvm.org/show_bug.cgi?id=42452 (fixed)
 
-## Comparison experiments
-**comparsion_results.xlsx** contains the results of comparison experiments in Section 4.4. The testing programs, optimization sequences, and the original testing results are contained in the '**comparison_experiments**' directory. **xx.tar.xz** includes the tested programs in the experiment. For each tested program, the bug information of compiler is attached to the end of the file.
-
 ## Time for confirming or fixing bugs of optimizations
 We collect 1323 unique bugs related to scalar optimizations from the bug repository of LLVM from October 2003 to Jun 10, 2019 to demonstrate that  it is time-consumming for confirming or fixing the bugs of optimizations. '**collected_bugs.txt**' contains the original bug information. In these bugs, 828 bugs have been confirmed or fixed, and 495 bugs still keep the "NEW" status. For the 828 confirmed or fixed bugs, although 428 bugs are confirmed or fixed in one month, the developers take more than 15 months to confirm or fix the most residual bugs. The average number of months for confirming or fixing these bugs is 5.6. In addition, the 495 bugs with "NEW" status have already existed for a long time, an average of 14.1 months.
 
